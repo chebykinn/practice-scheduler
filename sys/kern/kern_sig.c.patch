@@ -1,6 +1,14 @@
 --- /home/ivan/root/data/software/src/freebsd/src/sys/kern/kern_sig.c	2015-08-12 17:22:05.000000000 +0300
-+++ kern_sig.c	2016-09-23 18:59:51.000000000 +0300
-@@ -1713,6 +1713,13 @@
++++ kern_sig.c	2016-10-02 01:22:21.321618140 +0300
+@@ -37,6 +37,7 @@
+ #include <sys/cdefs.h>
+ __FBSDID("$FreeBSD: releng/10.2/sys/kern/kern_sig.c 284343 2015-06-13 16:15:43Z jhb $");
+ 
++#include "opt_sched.h"
+ #include "opt_compat.h"
+ #include "opt_kdtrace.h"
+ #include "opt_ktrace.h"
+@@ -1713,6 +1714,13 @@
  	struct proc *p;
  	int error;
  
