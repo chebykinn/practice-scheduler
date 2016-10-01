@@ -1,0 +1,26 @@
+--- /home/ivan/root/data/software/src/freebsd/src/sys/amd64/conf/GENERIC	2015-08-12 17:22:12.000000000 +0300
++++ USCHEDKRN	2016-09-23 19:00:03.000000000 +0300
+@@ -24,7 +24,9 @@
+ makeoptions	DEBUG=-g		# Build kernel with gdb(1) debug symbols
+ makeoptions	WITH_CTF=1		# Run ctfconvert(1) for DTrace support
+ 
+-options 	SCHED_ULE		# ULE scheduler
++#options 	SCHED_ULE		# ULE scheduler
++#options 	SCHED_4BSD		# ULE scheduler
++options     SCHED_U
+ options 	PREEMPTION		# Enable kernel thread preemption
+ options 	INET			# InterNETworking
+ options 	INET6			# IPv6 communications protocols
+@@ -78,7 +80,12 @@
+ 
+ # Debugging support.  Always need this:
+ options 	KDB			# Enable kernel debugger support.
++options 	DDB			# Enable kernel debugger support.
+ options 	KDB_TRACE		# Print a stack trace for a panic.
++options 	KDB_UNATTENDED		# Print a stack trace for a panic.
++options     GDB
++options     DDB_NUMSYM
++options     ALT_BREAK_TO_DEBUGGER
+ 
+ # Make an SMP-capable kernel by default
+ options 	SMP			# Symmetric MultiProcessor Kernel

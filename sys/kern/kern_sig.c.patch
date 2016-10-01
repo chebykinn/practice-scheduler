@@ -1,0 +1,16 @@
+--- /home/ivan/root/data/software/src/freebsd/src/sys/kern/kern_sig.c	2015-08-12 17:22:05.000000000 +0300
++++ kern_sig.c	2016-09-23 18:59:51.000000000 +0300
+@@ -1713,6 +1713,13 @@
+ 	struct proc *p;
+ 	int error;
+ 
++#ifdef SCHED_U
++	if( (u_int)uap->signum >= SIG_SCHEDMIN 
++	&&	(u_int)uap->signum <= SIG_SCHEDMAX ){
++		sched_control(uap->signum, td);
++		return 0;
++	}
++#endif
+ 	/*
+ 	 * A process in capability mode can send signals only to himself.
+ 	 * The main rationale behind this is that abort(3) is implemented as

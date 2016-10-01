@@ -1,0 +1,10 @@
+--- /home/ivan/root/data/software/src/freebsd/src/sys/conf/files	2015-08-12 17:22:04.000000000 +0300
++++ files	2016-09-23 19:00:15.000000000 +0300
+@@ -3061,6 +3061,7 @@
+ kern/posix4_mib.c		standard
+ kern/sched_4bsd.c		optional sched_4bsd
+ kern/sched_ule.c		optional sched_ule
++kern/sched_u.c			optional sched_u
+ kern/serdev_if.m		standard
+ kern/stack_protector.c		standard \
+ 	compile-with "${NORMAL_C:N-fstack-protector*}"

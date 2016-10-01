@@ -1,0 +1,16 @@
+--- /home/ivan/root/data/software/src/freebsd/src/sys/sys/signal.h	2015-08-12 17:22:13.000000000 +0300
++++ signal.h	2016-09-23 19:00:00.000000000 +0300
+@@ -113,6 +113,13 @@
+ #define	SIGLWP		SIGTHR
+ #define	SIGLIBRT	33	/* reserved by real-time library. */
+ #endif
++#ifdef SCHED_U
++#define	SIG_SCHEDMIN 34
++#define	SIG_SCHEDSWTCH 34
++#define	SIG_SCHEDRUNQ 35
++#define	SIG_SCHEDCMD 36
++#define	SIG_SCHEDMAX 36
++#endif
+ 
+ #define	SIGRTMIN	65
+ #define	SIGRTMAX	126

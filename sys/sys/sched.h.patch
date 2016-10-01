@@ -1,0 +1,13 @@
+--- /home/ivan/root/data/software/src/freebsd/src/sys/sys/sched.h	2015-08-12 17:22:13.000000000 +0300
++++ sched.h	2016-09-23 18:59:57.000000000 +0300
+@@ -63,6 +63,10 @@
+ #define	_SCHED_H_
+ 
+ #ifdef _KERNEL
++
++#ifdef SCHED_U
++void sched_control(int signum, struct thread *td);
++#endif
+ /*
+  * General scheduling info.
+  *

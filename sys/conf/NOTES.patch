@@ -1,0 +1,14 @@
+--- /home/ivan/root/data/software/src/freebsd/src/sys/conf/NOTES	2015-08-12 17:22:04.000000000 +0300
++++ NOTES	2016-09-23 19:00:08.000000000 +0300
+@@ -210,9 +210,10 @@
+ # SCHED_STATS is a debugging option which keeps some stats in the sysctl
+ # tree at 'kern.sched.stats' and is useful for debugging scheduling decisions.
+ #
+-options 	SCHED_4BSD
++#options 	SCHED_4BSD
+ options 	SCHED_STATS
+ #options 	SCHED_ULE
++options		SCHED_U
+ 
+ #####################################################################
+ # SMP OPTIONS:
